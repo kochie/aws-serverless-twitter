@@ -1,0 +1,17 @@
+{
+  "name": "twitter-listener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.ts --platform=node --bundle --outfile=dist/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@aws-sdk/client-eventbridge": "^3.229.0",
+    "esbuild": "^0.16.4",
+    "twitter-api-sdk": "^1.2.1"
+  }
+}

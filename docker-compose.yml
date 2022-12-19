@@ -1,0 +1,7 @@
+version: "2"
+services:
+  twitter-listener:
+    build:
+      context: lib/listener
+    environment:
+      BEARER_TOKEN: AAAAAAAAAAAAAAAAAAAAAL%2F3VwEAAAAAFVHy5%2BhHSRZomKBZsb8MqYLrvfs%3DVlG6uaecf8aM1gjK5W66h0L6PdD1Il2YCMGqU3R0zkN198iT1d
