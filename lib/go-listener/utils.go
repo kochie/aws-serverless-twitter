@@ -6,6 +6,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge"
 	"github.com/aws/aws-sdk-go-v2/service/eventbridge/types"
 	"log"
+	"os"
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
@@ -29,14 +30,14 @@ func getToken() {
 
 }
 
-func sendTweet() {
+func sendTweet(text string) {
 	_, err := eb.PutEvents(context.Background(), &eventbridge.PutEventsInput{
 		Entries: []types.PutEventsRequestEntry{
 			{
-				Detail:       aws.String(""),
-				DetailType:   aws.String(""),
-				EventBusName: aws.String(""),
-				Source:       aws.String(""),
+				Detail:       aws.String(text),
+				DetailType:   aws.String("tweet"),
+				EventBusName: aws.String(os.Getenv("EVENT_BUS_NAME")),
+				Source:       aws.String("twitter"),
 			}},
 	})
 	if err != nil {
